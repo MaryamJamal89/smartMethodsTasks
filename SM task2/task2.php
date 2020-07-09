@@ -4,14 +4,11 @@
       <title>Task 2 (PHP)</title>
    </head>
    <?php
-         $Fid = $_POST["F"]; // creates variable $Sid
-         $Lid = $_POST["L"];
-         $Rid = $_POST["R"];
-         $Bid = $_POST["B"];
-         $Sid = $_POST["S"];
 
+        $id = $_POST['id'];
+        
          // build SELECT query
-         $query = "SELECT move FROM `moves` WHERE id = $Fid, $Lid, $Rid, $Bid, $Sid,";
+         $query = "SELECT move FROM `moves` WHERE id = $id";
 
          // Connect to MySQL
          if ( !( $database = mysqli_connect( "localhost", "root", "" ) ) )                      
@@ -43,7 +40,7 @@
          }else {
             echo "NO Record Found !!";
          }
-    
+
       ?>
       
    </body>
